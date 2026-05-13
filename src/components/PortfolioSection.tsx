@@ -1,43 +1,38 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const projects = [
   {
-    title: "Умный помощник по выборам",
-    category: "AI/ML и веб-разработка",
-    image: "/omgekeerdestemwijzer-banner.png",
+    title: "Линия гидравлического прессования",
+    category: "Производство оборудования",
+    image: "/placeholder.jpg",
     description:
-      "AI-приложение для выборов. Пользователи задают вопросы о позициях партий и получают 100% фактические ответы из официальных программ с использованием RAG-технологии.",
-    url: "https://de-omgekeerde-stemwijzer.onrender.com/",
-    tags: ["Next.js", "AI/ML", "RAG", "TypeScript"],
+      "Спроектировали и изготовили гидравлическую прессовую линию мощностью 400 тонн для завода металлоконструкций. Полный цикл: КД, производство, монтаж и обучение операторов.",
+    tags: ["Гидравлика", "Автоматизация", "Под ключ"],
   },
   {
-    title: "Автомойка Tahsin",
-    category: "Веб-дизайн и разработка",
-    image: "/autopoetsbedrijf-tahsin-project.png",
+    title: "Модернизация токарных станков",
+    category: "Модернизация",
+    image: "/placeholder.jpg",
     description:
-      "Профессиональный сайт для автомойки с 20-летним опытом. Полная презентация услуг, автомойки и гаража с современным адаптивным дизайном.",
-    url: "https://www.autopoetsbedrijftahsin.nl/",
-    tags: ["React", "Next.js", "Tailwind CSS"],
+      "Провели модернизацию парка токарных станков на машиностроительном заводе: замена ЧПУ-систем, шпиндельных узлов, приводов подачи. Производительность выросла на 35%.",
+    tags: ["ЧПУ", "Станкостроение", "Модернизация"],
   },
   {
-    title: "Кадровое агентство CAN",
-    category: "Веб-разработка",
-    image: "/can-uitzendbureau-project.png",
+    title: "Конвейерная система для пищевого производства",
+    category: "Нестандартное оборудование",
+    image: "/placeholder.jpg",
     description:
-      "Кадровое агентство с 30-летним опытом в садоводческом секторе. Сайт с обзором услуг и прямыми контактами для работодателей и соискателей.",
-    url: "https://canbv.nl/",
-    tags: ["Next.js", "React", "Tailwind CSS"],
+      "Разработали и смонтировали конвейерную линию из нержавеющей стали для кондитерского предприятия. Соответствует санитарным нормам, интегрирована с существующей автоматикой.",
+    tags: ["Конвейеры", "Нержавеющая сталь", "Пищепром"],
   },
   {
-    title: "Портфолио Murat Sahin",
-    category: "Портфолио-сайт",
-    image: "/murat-sahin-portfolio.png",
+    title: "Система вентиляции промышленного цеха",
+    category: "Инженерные системы",
+    image: "/placeholder.jpg",
     description:
-      "Профессиональное портфолио full-stack разработчика. Демонстрация проектов, навыков и опыта с современным минималистичным дизайном и темной темой.",
-    url: "https://murat-sahin-dev.vercel.app/",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", ".NET Core"],
+      "Запроектировали и установили систему промышленной вентиляции для литейного цеха площадью 4 000 м². Вытяжка вредных примесей, приточные установки с рекуперацией тепла.",
+    tags: ["Вентиляция", "Литейное производство", "Рекуперация"],
   },
 ]
 
@@ -46,9 +41,9 @@ export function PortfolioSection() {
     <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">Наше портфолио</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">Наши проекты</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Ознакомьтесь с подборкой наших последних проектов и узнайте, как мы помогаем бизнесу расти с помощью мощных цифровых решений.
+            Реализованные объекты — лучшее подтверждение нашей компетенции. Каждый проект — это инженерная задача, решённая точно в срок.
           </p>
         </div>
 
@@ -58,9 +53,9 @@ export function PortfolioSection() {
               key={index}
               className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300"
             >
-              <div className="relative overflow-hidden aspect-video">
+              <div className="relative overflow-hidden aspect-video bg-muted flex items-center justify-center">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
@@ -69,9 +64,9 @@ export function PortfolioSection() {
                     size="sm"
                     variant="secondary"
                     className="gap-2"
-                    onClick={() => window.open(project.url, "_blank")}
+                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                   >
-                    Открыть проект <ExternalLink className="h-4 w-4" />
+                    Обсудить похожий проект
                   </Button>
                 </div>
               </div>

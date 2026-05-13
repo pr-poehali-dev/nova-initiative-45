@@ -4,39 +4,42 @@ import { QuoteFormDialog } from "@/components/QuoteFormDialog"
 
 const pricingTiers = [
   {
-    name: "Базовый",
-    price: "99 900",
+    name: "Стандарт",
+    price: "По запросу",
+    description: "Типовое оборудование и узлы",
     features: [
-      "До 5 страниц",
-      "Адаптивный дизайн",
-      "Базовая SEO-оптимизация",
-      "Форма обратной связи",
-      "1 месяц поддержки",
+      "Изготовление по готовой КД",
+      "Стандартные материалы",
+      "Выходной контроль качества",
+      "Паспорт изделия",
+      "Гарантия 12 месяцев",
     ],
     highlighted: false,
   },
   {
-    name: "Про",
-    price: "249 900",
+    name: "Индивидуальный",
+    price: "По запросу",
+    description: "Нестандартное оборудование под ТЗ",
     features: [
-      "До 15 страниц",
-      "Премиум-дизайн",
-      "Расширенная SEO-оптимизация",
-      "Интеграция CMS",
-      "Функционал e-commerce",
-      "3 месяца поддержки",
+      "Разработка конструкторской документации",
+      "Производство под спецификацию заказчика",
+      "Испытания и приёмо-сдаточные тесты",
+      "Монтаж и пуско-наладка",
+      "Обучение персонала",
+      "Гарантия 18 месяцев",
     ],
     highlighted: true,
   },
   {
-    name: "Индивидуальный",
+    name: "Сервисный",
     price: "По запросу",
+    description: "Обслуживание и модернизация",
     features: [
-      "Неограниченно страниц",
-      "Кастомный функционал",
-      "API-интеграции",
-      "Персональный менеджер",
-      "6 месяцев поддержки",
+      "Диагностика оборудования",
+      "Плановое техническое обслуживание",
+      "Поставка запасных частей",
+      "Аварийный выезд в течение 24 ч",
+      "Модернизация и ремонт",
     ],
     highlighted: false,
   },
@@ -57,13 +60,13 @@ export function PricingSection() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Прозрачные цены
+            Направления работы
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance">
-            Выберите <span className="text-primary">идеальный тариф</span> для вашего проекта
+            Выберите <span className="text-primary">подходящий формат</span> сотрудничества
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            От стартапов до крупного бизнеса — у нас есть подходящее решение
+            Стоимость рассчитывается индивидуально под каждую задачу — оставьте заявку и получите коммерческое предложение
           </p>
         </div>
 
@@ -82,20 +85,11 @@ export function PricingSection() {
                   Популярный
                 </div>
               )}
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
+              <CardHeader className="text-center pb-4">
+                <CardTitle className="text-2xl mb-1">{tier.name}</CardTitle>
+                <p className="text-sm text-muted-foreground">{tier.description}</p>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold">
-                    {tier.price === "По запросу" ? (
-                      <span className="text-3xl">{tier.price}</span>
-                    ) : (
-                      <>
-                        <span className="text-lg font-normal text-muted-foreground">от </span>
-                        {tier.price}
-                        <span className="text-lg font-normal text-muted-foreground"> ₽</span>
-                      </>
-                    )}
-                  </span>
+                  <span className="text-3xl font-bold">{tier.price}</span>
                 </div>
               </CardHeader>
               <CardContent>
@@ -112,7 +106,7 @@ export function PricingSection() {
                   variant={tier.highlighted ? "default" : "outline"}
                   className={`w-full ${tier.highlighted ? "shadow-lg shadow-primary/20" : ""}`}
                 >
-                  {tier.price === "По запросу" ? "Связаться с нами" : "Выбрать тариф"}
+                  Получить КП
                 </QuoteFormDialog>
               </CardContent>
             </Card>
@@ -121,8 +115,9 @@ export function PricingSection() {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground">
-            Все тарифы включают <span className="text-primary font-semibold">бесплатную настройку хостинга</span> и{" "}
-            <span className="text-primary font-semibold">SSL-сертификат</span>
+            Все проекты сопровождаются{" "}
+            <span className="text-primary font-semibold">полным комплектом документации</span> и{" "}
+            <span className="text-primary font-semibold">сертификатами соответствия</span>
           </p>
         </div>
       </div>

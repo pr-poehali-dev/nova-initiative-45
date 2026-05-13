@@ -2,19 +2,19 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle2, Sparkles } from "lucide-react"
 
 const values = [
-  { title: "Качество", description: "Высококлассные решения, соответствующие самым высоким стандартам" },
-  { title: "Доступность", description: "Профессиональные сайты по честным и прозрачным ценам" },
-  { title: "Прозрачность", description: "Четкая коммуникация без скрытых платежей" },
-  { title: "Клиентоориентированность", description: "Ваши цели и пожелания всегда в приоритете" },
-  { title: "Масштабируемость", description: "Сайты, которые растут вместе с вашим бизнесом" },
-  { title: "Гибкость", description: "Быстрая адаптация под меняющиеся потребности" },
+  { title: "Точность", description: "Допуски и посадки строго по чертежу, контроль качества на каждом этапе производства" },
+  { title: "Надёжность", description: "Используем сертифицированные материалы и комплектующие от проверенных поставщиков" },
+  { title: "Сроки", description: "Строго соблюдаем договорённости — поставка в срок без скрытых задержек" },
+  { title: "Клиентоориентированность", description: "Работаем под задачи заказчика, а не по шаблону — каждый проект индивидуален" },
+  { title: "Полный цикл", description: "Проектирование, производство, монтаж и сервис — в одних руках" },
+  { title: "Безопасность", description: "Всё оборудование соответствует требованиям промышленной безопасности и техрегламентам" },
 ]
 
 const stats = [
-  { number: "50+", label: "Проектов" },
-  { number: "45+", label: "Довольных клиентов" },
-  { number: "30+", label: "Созданных логотипов" },
-  { number: "3+", label: "Года опыта" },
+  { number: "200+", label: "Единиц оборудования" },
+  { number: "80+", label: "Заказчиков" },
+  { number: "15+", label: "Лет в отрасли" },
+  { number: "12", label: "Регионов присутствия" },
 ]
 
 export function AboutSection() {
@@ -27,19 +27,19 @@ export function AboutSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
             <Sparkles className="h-4 w-4" />
-            О CodeCraft
+            О МашПром
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">
             Качество, которое{" "}
             <span className="text-primary relative">
-              впечатляет
+              проверено временем
               <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
                 <path d="M0 4C50 2 150 6 200 4" stroke="currentColor" strokeWidth="2" className="text-primary" />
               </svg>
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Создание сайта не должно быть дорогим. Мы разрабатываем индивидуальные решения, которые идеально соответствуют пожеланиям каждого клиента.
+            Более 15 лет мы разрабатываем и производим промышленное оборудование для предприятий разных отраслей. Наш принцип — не просто выполнить заказ, а решить производственную задачу заказчика.
           </p>
         </div>
 
